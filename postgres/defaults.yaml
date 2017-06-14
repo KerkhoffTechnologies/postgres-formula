@@ -3,6 +3,7 @@ postgres:
   pkg_dev: postgresql-devel
   pkg_libpq_dev: postgresql-libs
   pkg_client: postgresql-client
+  pkg_pgxn: pgxnclient
   pkg_contrib: postgresql-contrib
   python: python-psycopg2
   service: postgresql

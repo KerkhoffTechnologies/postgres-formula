@@ -1,9 +1,15 @@
 {% from "postgres/map.jinja" import postgres with context %}
 
-{% if postgres.use_upstream_repo %}
 include:
+  - postgres.null
+{% if postgres.use_upstream_repo %}
   - postgres.upstream
 {% endif %}
+{% if postgres.use_pgxn_extensions %}
+  - postgres.dev
+  - postgres.pgxn
+{% endif %}
+
 
 {{ postgres.conf_dir }}:
   file.directory:

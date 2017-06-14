@@ -11,7 +11,7 @@ install-postgresql-client:
     - refresh: {{ postgres.use_upstream_repo }}
 
 {% if postgres.pkg_libpq_dev != False %}
-install-postgres-libpq-dev:
+install-postgres-libpq-dev-client:
   pkg.installed:
     - name: {{ postgres.pkg_libpq_dev }}
 {% endif %}
