@@ -7,9 +7,10 @@ include:
 
 install-pgxn-client:
   pkg.installed:
-    - name: {{ postgres.pkg_pgxn }}
-    - name: make
-    - name: gcc
+    - pkgs: 
+      - {{ postgres.pkg_pgxn }} 
+      - make
+      - gcc
     - refresh: {{ postgres.use_upstream_repo }}
 
 {% for name, db in postgres.databases.items()  %}
@@ -30,7 +31,6 @@ postgres-pgxn-install-ext-{{ ext }}:
   cmd.run:
     - require:
       - pkg: install-pgxn-client
-    - onlyif: which pgxn
 {% if not ext_opts['update'] %}
     - creates: /usr/lib/postgresql/{{ postgres.version }}/lib/{{ ext }}.so
 {% endif %} 
