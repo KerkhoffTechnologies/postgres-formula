@@ -7,6 +7,11 @@ jessie:
   pkg_repo: deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main
   conf_dir: /etc/postgresql/9.6/main
   pkg_dev: postgresql-server-dev-9.6
+stretch:
+  version: 9.6
+  pkg_repo: deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main
+  conf_dir: /etc/postgresql/9.6/main
+  pkg_dev: postgresql-server-dev-9.6
 trusty:
   version: 9.3
   pkg_repo: deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
